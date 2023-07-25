@@ -1,0 +1,331 @@
+* {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+body {
+    overflow: hidden;
+    background-color: #323232;
+    height: 100vh;
+    transition: all;
+    color: #d1d1d1;
+}
+
+input[type="text"] {
+    background: #525252;
+    color: #bdbdbd;
+    border-style: none;
+}
+
+
+
+/* 滚动条整体 */
+*::-webkit-scrollbar {
+    height: 0.4em;
+    width: 0.4em;
+}
+
+/* 两个滚动条交接处 -- x轴和y轴 */
+*::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+/* 滚动条滑块 */
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #ffffff7b;
+}
+
+/* 滚动条轨道 */
+*::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #0000004f;
+}
+
+/* 滚动条两端按钮 */
+*::-webkit-scrollbar-button {}
+
+
+
+#title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    pointer-events: none;
+}
+
+#topLine {
+    width: 100vw;
+    height: 2em;
+
+    background-color: #232323;
+    position: relative;
+    app-region: drag;
+    color: #c2c2c2;
+
+
+    display: flex;
+
+    transition: width, height;
+
+    z-index: 128;
+}
+
+.topButton {
+    width: 2.5em;
+    height: 100%;
+    background: #ffffff00;
+
+    app-region: no-drag;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.topButton:hover {
+    background: #ffffff4d;
+}
+
+.topButton:active {
+    background: #ffffff70;
+}
+
+.btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff0;
+    border-radius: 0.5em;
+    border-style: solid;
+    border-width: 0.1em;
+    padding: 0.6em;
+    border-color: #b9b9b9;
+    box-sizing: border-box;
+    color: #d1d1d1;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #ffffff25;
+}
+
+.btn:active {
+    background-color: #00000063;
+}
+
+.btn:disabled {
+    color: #7c7c7c;
+}
+
+.settingsBody {
+
+    color: #d7d7d7;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    background: #323232;
+    padding-bottom: 1em;
+
+    box-sizing: border-box;
+}
+
+.settingsBody>h1 {
+    padding-top: 0.4em;
+    padding-left: 0.4em;
+}
+
+.settingsBody * {
+    width: 100%;
+}
+
+#settingList {
+    padding: 0.8em;
+    margin: 1em;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#settingList>div {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+
+main {
+    flex-grow: 1;
+    position: relative;
+}
+
+main>div {
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.mainBox {
+    border-radius: 1em;
+    background-color: #00000046;
+
+    display: flex;
+
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
+    pointer-events: none;
+    transform: translateY(-50px);
+
+    flex-direction: column;
+    padding: 2em;
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.mainBox:target {
+    opacity: 1;
+    pointer-events: auto;
+
+    transform: translateY(0);
+}
+
+.mainBox>div>* {
+    margin: 1em;
+}
+
+#selectProject {
+    width: 70%;
+    min-width: 320px;
+    height: 70%;
+    min-height: 280px;
+    max-width: 40em;
+    max-height: 30em;
+}
+
+#wait {
+    width: 40%;
+    min-width: 320px;
+    height: 20%;
+    min-height: 100px;
+    max-width: 32em;
+    max-height: 10em;
+}
+
+#editer {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    overflow-y: auto;
+    justify-content: flex-start;
+}
+
+#txtList input[type="text"] {
+    width: 100%;
+}
+
+#txtList textarea {
+    width: 100%;
+    resize: vertical;
+
+    color: #c7c7c7;
+    background: #00000026;
+
+    font-size: 1.5em;
+    display: block;
+    cursor: text;
+    text-wrap: wrap;
+
+    border-style: none;
+    padding: 0.3em;
+    transition: heigth;
+
+    min-height: 1em;
+    overflow: hidden auto;
+
+    height: 4em;
+    outline: none;
+    box-sizing: border-box;
+    margin: 0.4em 0 0.4em 0;
+
+}
+
+#txtList textarea:focus {}
+
+#txtList>div {
+    display: flex;
+    border-radius: 1em;
+    background: #ffffff0a;
+    padding: 0.5em 0.8em 0.5em 0.5em;
+    overflow: hidden;
+    height: auto;
+}
+
+#txtList>div:hover {
+
+    box-shadow: 0 0 1em #00000045;
+}
+
+
+#txtList .dos {
+    display: flex;
+    flex-direction: column;
+    width: 5em;
+    align-items: baseline;
+    margin: -0.5em;
+    margin-right: 1em;
+    padding: 0.5em;
+    background: #0000000f;
+    justify-content: space-between;
+}
+
+#txtList .edit {
+    flex-grow: 1;
+}
+
+#txtList .edit>* {}
+
+.nodisplay {
+    opacity: 0;
+}
+
+.nodisplay:hover {
+    opacity: 1;
+}
+
+.mainBox>.dos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainBox>.dos>div {
+    flex-grow: 1;
+    margin: 0.3em;
+}
+
+.edit .btn {
+    margin-left: 0.5em;
+}
+
+.edit>.editbtn {
+    display: flex;
+}

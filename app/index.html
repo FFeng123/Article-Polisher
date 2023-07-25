@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/icon/style.css">
+    <link rel="stylesheet" href="css/lib/toastr.min.css">
+    <title>Article Polisher</title>
+</head>
+
+<body style="display: flex;flex-direction: column;">
+    <div id="topLine">
+        <div id="title">
+            Article Polisher
+        </div>
+        <div class="topButton" id="closeBtn"><span class="icon-cancel-circle"></span></div>
+        <div class="topButton" id="saveBtn"><span class="icon-floppy-disk"></span></div>
+        <div class="topButton" id="settingBtn"><span class="icon-cog"></span></div>
+        <div style="flex-grow: 1;"></div>
+        <div class="topButton" id="smallBtn"><span class="icon-minus"></span></div>
+        <div class="topButton" id="fillBtn"><span class="icon-enlarge2"></span></div>
+        <div class="topButton" id="exitBtn"><span class="icon-cross"></span></div>
+    </div>
+
+    <main>
+        <div>
+            <div class="mainBox" id="selectProject">
+                <h1>开始</h1>
+                <div>
+                    <div class="btn" id="open_newBtn">新建文件，选择保存位置</div>
+                    <div class="btn" id="open_hasBtn">打开文件，选择读取位置</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="mainBox" id="wait">
+                <h1><img src="images/loading.svg" style="height: 1em;margin-right: 1em;">请稍候···</h1>
+            </div>
+        </div>
+        <div>
+            <div class="mainBox" id="editer">
+                <div class="dos">
+                    <div class="btn" id="block_runall"><span class="icon-play3" style="margin-right: 1em;"></span>重新计算全部
+                    </div>
+                    <div class="btn" id="block_delempty"><span class="icon-bin2"
+                            style="margin-right: 1em;"></span>删除文本为空的块</div>
+                    <div class="btn" id="block_visall"><span class="icon-eye-plus"
+                            style="margin-right: 1em;"></span>展开所有</div>
+                    <div class="btn" id="block_unvisall"><span class="icon-eye-minus"
+                            style="margin-right: 1em;"></span>收起所有</div>
+                    <div class="btn" id="block_import"><span class="icon-download3"
+                            style="margin-right: 1em;"></span>导入纯文本</div>
+                    <div class="btn" id="block_export"><span class="icon-upload3"
+                            style="margin-right: 1em;"></span>导出纯文本</div>
+                </div>
+                <div id="txtList"></div>
+                <div>
+                    <div class="btn nodisplay" id="block_add"><span class="icon-plus"
+                            style="margin-right: 1em;"></span>添加空块</div>
+                    <div style="text-align: right;">字数: <span id="I_count">0</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+</body>
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/toastr.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/editer.js"></script>
+
+</html>

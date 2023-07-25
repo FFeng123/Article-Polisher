@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="48" width="80">
+    <circle cx="24" cy="24" r="24" fill="#ccc">
+        <animate attributeName="cx" attributeType="XML" id="a1"
+                to="54"
+                begin="0s;a2.end+0.1s" dur="0.4s"
+                fill="freeze"/>
+        <animate attributeName="cx" attributeType="XML" id="a2"
+                to="24"
+                begin="a1.end+0.1s" dur="0.4s"
+                fill="freeze"/>
+    </circle>
+</svg>

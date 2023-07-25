@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>设置</title>
+</head>
+
+<body class="settingsBody">
+    <h1 style="width: 100vw;app-region: drag;">设置</h1>
+    <div id="settingList">
+        <div data-key="AIServerAddr">
+            <div>AI服务器地址</div>
+            <input type="text">
+        </div>
+        <div data-key="max_length">
+            <div>AI请求长度限制</div>
+            <input type="text">
+        </div>
+        <div data-key="top_p">
+            <div>参数TopP</div>
+            <input type="text">
+        </div>
+        <div data-key="temperature">
+            <div>参数Temperature</div>
+            <input type="text">
+        </div>
+        <div data-key="mem_staticA">
+            <div>前置记忆A</div>
+            <input type="text">
+        </div>
+        <div data-key="mem_staticB">
+            <div>前置记忆B</div>
+            <input type="text">
+        </div>
+    </div>
+    <div style="padding: 0 1em 0 1em;box-sizing: border-box;">
+        <div id="close" class="btn">关闭</div>
+    </div>
+</body>
+<script src="js/settings.js"></script>
+
+</html>
